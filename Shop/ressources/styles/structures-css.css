@@ -1,0 +1,102 @@
+/**
+*ETML
+*Author : Benfares Anass
+*Date : 03.06.2016
+*Summary : Include the style of the structure of the web site
+**/
+
+body
+{
+	margin-top: 0px;
+	color: black;
+	font-family: sans-serif, century gothic;
+
+}
+
+/* Structure */
+.container
+{
+	width: 1200px;
+	height: 600px;
+	margin: 0px auto;
+
+}
+
+
+/* Header */
+.header
+{
+	padding-top: 20px;
+	margin: 0px auto;
+	color: black;
+	height: 80px;
+}
+
+.textLogo
+{
+	font-size: 44px;
+
+}
+
+.textLogo2
+{
+	font-size: 12px;
+	text-decoration: line-through;
+
+}
+/* MENU */
+
+.navBar
+{
+	height: 30px;
+	background: #fafafa;
+	border-top: 1px solid #bababa;
+	border-bottom: 1px solid #bababa;
+	padding-top: 10px;
+	padding-left: 60px;
+	padding-right: 60px;  
+
+}
+
+.navBar a
+{
+	font-size: 20px;
+	color: #888888;;
+	text-decoration: none;
+}
+
+.navHome
+{
+	float: left;
+}
+
+.navPage
+{
+	float: left;
+	width: 83%;
+	text-align: center;
+}
+
+.navPage a
+{
+	color: #888888;
+}
+
+
+.navSign
+{
+	text-align: right;
+}
+
+/* Content */
+
+
+/* Footer */
+
+.footer
+{
+	height: 20px;
+	border-top: solid black 1px;
+	padding-top: 8px;
+	margin-top: 100px;
+}
