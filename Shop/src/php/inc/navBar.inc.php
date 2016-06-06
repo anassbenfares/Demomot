@@ -23,8 +23,8 @@
             <!-- Link-->
     	 	<div class="navPage">
                 <a href="index.php?p=">Articles</a>
-                <a href="index.php?p=">About us</a>
-                <a href="index.php?p=">Contact us</a>   
+                <a href="index.php?p=">About</a>
+                <a href="index.php?p=">Contact</a>   
             </div>
             <!-- /.Link -->
 
@@ -34,5 +34,5 @@
             </div>
             <!-- /.Login menu -->
             
-        </nav>
+        </nav>  
         <!-- /.navbar -->

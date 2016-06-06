@@ -10,6 +10,6 @@
  ?>
 
 <footer class="footer">
-	<span>Created by Anass Benfares</span>
+	<span>© 2016 Created by Anass Benfares</span>
 </footer>
  </html>

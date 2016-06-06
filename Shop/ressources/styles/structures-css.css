@@ -30,6 +30,7 @@ body
 	margin: 0px auto;
 	color: black;
 	height: 80px;
+	text-align: center;
 }
 
 .textLogo
@@ -49,7 +50,7 @@ body
 .navBar
 {
 	height: 30px;
-	background: #fafafa;
+	/*background: #fafafa;*/
 	border-top: 1px solid #bababa;
 	border-bottom: 1px solid #bababa;
 	padding-top: 10px;
@@ -99,4 +100,5 @@ body
 	border-top: solid black 1px;
 	padding-top: 8px;
 	margin-top: 100px;
+	
 }
