@@ -4,12 +4,10 @@
 ///Summary : Create the footer in one file and include in all page
 /// of the web site.
 
-
-
-
  ?>
 
-<footer class="footer">
-	<span>© 2016 Created by Anass Benfares</span>
-</footer>
- </html>
+		<footer class="footer">
+			<span>© 2016 Created by Anass Benfares</span>
+		</footer>
+	</body>
+</html>

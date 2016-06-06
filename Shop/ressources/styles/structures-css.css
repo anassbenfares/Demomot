@@ -10,7 +10,12 @@ body
 	margin-top: 0px;
 	color: black;
 	font-family: sans-serif, century gothic;
+}
 
+ a
+{
+	color: #888888;
+	text-decoration: none;
 }
 
 /* Structure */
@@ -22,11 +27,42 @@ body
 
 }
 
+/* Form login*/
+.formLogin
+{
+	width: 300px;
+	float: left;
+	background: skyblue;
+}
+
+.forminscription
+{
+	width: 300px;
+	border-left: 1px solid black;
+	float: left;
+	background: grey;
+}
+
+.inputText
+{
+	margin-bottom: 25px;
+	width: 150px;
+	height: 25px;
+
+}
+
+.formButton
+{
+	width: 250px;
+	height: 30px;
+	
+}
+
 
 /* Header */
 .header
 {
-	padding-top: 20px;
+	padding: 40px;
 	margin: 0px auto;
 	color: black;
 	height: 80px;
@@ -62,8 +98,7 @@ body
 .navBar a
 {
 	font-size: 20px;
-	color: #888888;;
-	text-decoration: none;
+	letter-spacing: 2px;
 }
 
 .navHome
@@ -74,15 +109,9 @@ body
 .navPage
 {
 	float: left;
-	width: 83%;
+	width: 79.6%;
 	text-align: center;
 }
-
-.navPage a
-{
-	color: #888888;
-}
-
 
 .navSign
 {
@@ -91,14 +120,27 @@ body
 
 /* Content */
 
+.error404
+{
+	padding-top: 50px;
+}
+
+.homePageMessage
+{
+	margin-top: 50px;
+
+}
+
 
 /* Footer */
 
 .footer
 {
+	overflow: hidden;
 	height: 20px;
-	border-top: solid black 1px;
+	border-top: 1px solid #bababa;
 	padding-top: 8px;
 	margin-top: 100px;
+	color: #888888;
 	
 }

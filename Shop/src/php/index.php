@@ -6,12 +6,8 @@
 
 
  ?>
-<section>
-<h2> Bienvenue sur le site de la marque Karmah</h2>
-<img src="./ressources/images/logo.png" alt="Smiley face" />
-
-
+<section class="homePageMessage">
+	<h2> Bienvenue sur le site de la marque Karmah</h2>
+	<img src="./ressources/images/logo.png" alt="Smiley face" />
 </section>
 
-
-</body>

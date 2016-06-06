@@ -14,7 +14,7 @@ else{
 //Check if page exist and if not call page 404
 if(!file_exists("src/php/".$p.".php"))
 {
-		$p = '404';
+		$p = 'inc/404';
 }
 
 //add the header in each page

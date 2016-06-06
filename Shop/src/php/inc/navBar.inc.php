@@ -22,15 +22,15 @@
             </div>
             <!-- Link-->
     	 	<div class="navPage">
-                <a href="index.php?p=">Articles</a>
-                <a href="index.php?p=">About</a>
-                <a href="index.php?p=">Contact</a>   
+                <a href="index.php?p=index">Articles</a>
+                <a href="index.php?p=about">About</a>
+                <a href="index.php?p=contact">Contact</a>   
             </div>
             <!-- /.Link -->
 
             <!-- Login menu-->
             <div class="navSign">    
-                <a href="index.php?p="><i class="">Se connecter</i></a> 
+                <a href="index.php?p=login"><i class="">Se connecter</i></a> 
             </div>
             <!-- /.Login menu -->
             
