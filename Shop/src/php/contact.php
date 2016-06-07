@@ -3,6 +3,7 @@
 ///Date : 06.06.2016
 ///Summary : Contact page of the web site
 
+$page="contact";
 
  ?>
 <section class="homePageMessage">

@@ -5,61 +5,34 @@
 *Summary : Include the style of the structure of the web site
 **/
 
+/******************************************** HTML ELEMENTS ********************************************/
+
 body
 {
+	height: 100%;
 	margin-top: 0px;
 	color: black;
 	font-family: sans-serif, century gothic;
 }
 
- a
+a
 {
 	color: #888888;
 	text-decoration: none;
 }
 
-/* Structure */
+/******************************************** Structure ********************************************/
 .container
 {
-	width: 1200px;
-	height: 600px;
-	margin: 0px auto;
-
-}
-
-/* Form login*/
-.formLogin
-{
-	width: 300px;
-	float: left;
-	background: skyblue;
-}
-
-.forminscription
-{
-	width: 300px;
-	border-left: 1px solid black;
-	float: left;
-	background: grey;
-}
-
-.inputText
-{
-	margin-bottom: 25px;
-	width: 150px;
-	height: 25px;
-
-}
-
-.formButton
-{
-	width: 250px;
-	height: 30px;
+	width: 1000px;
 	
+	margin: 0px auto;
+	min-height: 100%;
+	margin-bottom: -330px;
+	position: relative;
 }
 
-
-/* Header */
+/******************************************** Header ********************************************/
 .header
 {
 	padding: 40px;
@@ -72,21 +45,18 @@ body
 .textLogo
 {
 	font-size: 44px;
-
 }
 
 .textLogo2
 {
 	font-size: 12px;
 	text-decoration: line-through;
-
 }
-/* MENU */
+/************************ MENU ************************/
 
 .navBar
 {
 	height: 30px;
-	/*background: #fafafa;*/
 	border-top: 1px solid #bababa;
 	border-bottom: 1px solid #bababa;
 	padding-top: 10px;
@@ -101,6 +71,16 @@ body
 	letter-spacing: 2px;
 }
 
+.active 
+{
+	color: black;
+}
+
+.navBar a:hover
+{
+	color: black;
+}
+
 .navHome
 {
 	float: left;
@@ -109,7 +89,7 @@ body
 .navPage
 {
 	float: left;
-	width: 79.6%;
+	width: 74.6%;
 	text-align: center;
 }
 
@@ -118,7 +98,7 @@ body
 	text-align: right;
 }
 
-/* Content */
+/******************************************** Content ********************************************/
 
 .error404
 {
@@ -131,16 +111,61 @@ body
 
 }
 
+/************************ Form login ************************/
+.formLogin
+{
+	padding: 50px;
+	float: left;
+	border: 1px solid #C1C1C1;
+}
 
-/* Footer */
+.forminscription
+{
+	padding: 50px;
+	margin-left: 50px;
+	border: 1px solid #C1C1C1;
+	float: left;
+}
+
+.inputText
+{
+	margin-bottom: 15px;
+	width: 367px;
+	height: 25px;
+
+}
+
+.formButton
+{
+	width: 373px;
+	height: 30px;
+	margin-top: 15px;
+	
+}
+
+#forminscriptionLastName
+{
+	margin-top: 20px;
+}
+
+/************************ Article ************************/
+
+
+/******************************************** Footer ********************************************/
 
 .footer
 {
-	overflow: hidden;
-	height: 20px;
+	min-height: 100%;
+	margin-bottom: -100px;
+	position: relative;
+	height: 50px;
+	width: 1000px;
 	border-top: 1px solid #bababa;
-	padding-top: 8px;
-	margin-top: 100px;
 	color: #888888;
-	
+}
+
+.clearfooter 
+{
+	height: 100px;
+	clear: both;
 }

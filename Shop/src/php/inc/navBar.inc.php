@@ -6,14 +6,13 @@
 /// of the web site.
 
 
-//Determine what is the page to add the class "active"
 ?>
 <body>
     <div class="container">
         <!--Header-->
         <div class="header">
-            <span class="textLogo">K.A.R.M.A.H</span><br>
-            <span class="textLogo2">Shop</span>
+            <span class="textLogo">Le Shop</span><br>
+            <span class="textLogo2">by Anass</span>
         </div>    
         <!--Navbar-->
         <nav class="navBar" role="navigation">
@@ -21,10 +20,30 @@
                 <a class="" href="index.php?p=index">Accueil</a>
             </div>
             <!-- Link-->
-    	 	<div class="navPage">
-                <a href="index.php?p=index">Articles</a>
-                <a href="index.php?p=about">About</a>
-                <a href="index.php?p=contact">Contact</a>   
+            <div class="navPage">
+            <?php 
+            //Determine what is the page to add the class "active"
+            switch ($page) 
+            {
+            case "index":
+                echo "
+                <a class=\"active\" href=\"index.php?p=index\">Articles</a>
+                <a href=\"index.php?p=contact\">Contact</a>";
+                break;
+
+            case "contact":
+                echo "
+                <a href=\"index.php?p=index\">Articles</a>
+                <a class=\"active\" href=\"index.php?p=contact\">Contact</a>";
+                break;
+
+            default:
+               echo "
+               <a href=\"index.php?p=index\">Articles</a>
+                <a href=\"index.php?p=contact\">Contact</a> ";
+            }  
+             ?>
+                  
             </div>
             <!-- /.Link -->
 

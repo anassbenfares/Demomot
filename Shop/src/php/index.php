@@ -4,6 +4,7 @@
 ///Summary : Home page of the web site
 /// with all article  
 
+$page="index";
 
  ?>
 <section class="homePageMessage">

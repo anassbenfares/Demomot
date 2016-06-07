@@ -6,26 +6,35 @@
 
  ?>
 <section class="homePageMessage">
-	<h2> Page de connexion</h2>
+	
 	<div class="formLogin">
-	<form methode="post" action="index.php?p=login_V" >
+		<h2> Connexion</h2>
+		<form methode="post" action="index.php?p=login_V" >
 
-	<span>Identifant:</span><input class="inputText" type="text" name="login" placeholder="Identifiant"/><br>
-    <span>Mot de passe: </span><input class="inputText" type="password"  name="password" placeholder="Mot de passe"/><br>
+		<div><span>Adresse Email</span></div><input class="inputText" type="text" name="login" placeholder="Adresse Email"/><br>
+	    <div><span>Mot de passe </span></div><input class="inputText" type="password"  name="password" placeholder="Mot de passe"/><br>
 
-    <input class="formButton" type="submit"/><br>
+	    <button class="formButton" type="submit"/>Connecter </button><br>
 
-	</form>
+		</form>
 	</div>
 
 	<div class="forminscription">
-	<form methode="post" action="index.php?p=inscription_V" >
+		<h2> Inscription</h2>
+		<form methode="post" action="index.php?p=inscription_V" >
+			<div>
+			<span>Civilité:</span>
+			<INPUT type= "radio" name="gender" value="madame"> Madame
+			<INPUT type= "radio" name="gender" value="monsieur"> Monsieur
+			</div>
+			<div id="forminscriptionLastName"><span>Nom</span></div><input class="inputText"  type="text" name="lastName" placeholder="Nom"/>
+			<div id="forminscriptionFirstName" ><span>Prénom</span></div><input class="inputText" type="text" name="firstName" placeholder="Prénom"/>
+			<div id="forminscriptionMail"><span>Adresse Mail</span></div><input class="inputText"  type="text" name="mail" placeholder="Adresse Mail"/>
+			<div id="forminscriptionLogin"> <span>Téléphone</span></div><input class="inputText" type="text" name="login" placeholder="Téléphone"/>
+			<div id="forminscriptionPassword"><span>Choissisez un mot de passe</span></div><input class="inputText"  type="password" name="login" placeholder="Mot de passe"/>
+			<div id="forminscriptionPasswordRepeat"><span>Comfirmer le mot de passe</span></div><input class="inputText"  type="passwordRepeat" name="login" placeholder="Répéter le mot de passe"/>
+		    <div id=""><button class="formButton" type="submit"/> s'inscrire</button></div>
 
-	<span>Nom:</span><input class="inputText" type="text" name="login" placeholder="Identifiant"/><br>
-	<span>Prénom:</span><input class="inputText" type="text" name="login" placeholder="Identifiant"/><br>
-
-    <input class="formButton" type="submit"/><br>
-
-	</form>
+		</form>
 	</div>
 </section>
