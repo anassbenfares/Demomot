@@ -7,7 +7,7 @@
  ?>
  		<div class="clearfooter"></div>
 		<footer class="footer">
-			<span>© 2016 Created by Anass Benfares</span>
+			<span>LeShop© created by Anass Benfares</span>
 		</footer>
 	</body>
 </html>

@@ -25,7 +25,6 @@ a
 .container
 {
 	width: 1000px;
-	
 	margin: 0px auto;
 	min-height: 100%;
 	margin-bottom: -330px;
@@ -35,11 +34,11 @@ a
 /******************************************** Header ********************************************/
 .header
 {
-	padding: 40px;
+	padding: 20px;
+	text-align: center;
 	margin: 0px auto;
 	color: black;
 	height: 80px;
-	text-align: center;
 }
 
 .textLogo
@@ -56,47 +55,51 @@ a
 
 .navBar
 {
-	height: 30px;
-	border-top: 1px solid #bababa;
-	border-bottom: 1px solid #bababa;
-	padding-top: 10px;
-	padding-left: 60px;
-	padding-right: 60px;  
-
+	height: 40px;
+	border: 1px solid #888888;
 }
 
 .navBar a
 {
+	color: #888888;
 	font-size: 20px;
-	letter-spacing: 2px;
 }
 
-.active 
+.active
 {
-	color: black;
+	color: green;
 }
 
 .navBar a:hover
 {
 	color: black;
 }
-
-.navHome
+	
+.navSquare
 {
+	margin-right: 5px;
+	padding-top: 10px;
+	padding-left: 5px;
+	height: 30px;
 	float: left;
 }
 
-.navPage
+.navSquare:last-child
 {
-	float: left;
-	width: 74.6%;
-	text-align: center;
+	margin-right: 10px;
+	float: right;
 }
 
-.navSign
+.firstNavBar
 {
-	text-align: right;
+	height: 40px;
 }
+
+.firstNavBar a 
+{
+	color: black;
+}
+
 
 /******************************************** Content ********************************************/
 
@@ -107,8 +110,7 @@ a
 
 .homePageMessage
 {
-	margin-top: 50px;
-
+	margin-top: 50px;	
 }
 
 /************************ Form login ************************/
@@ -146,6 +148,11 @@ a
 #forminscriptionLastName
 {
 	margin-top: 20px;
+}
+
+.loginMarginTop
+{
+	margin-top: 50px;	
 }
 
 /************************ Article ************************/
