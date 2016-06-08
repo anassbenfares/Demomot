@@ -8,9 +8,9 @@
 <section class="loginMarginTop">
 	<div class="formLogin">
 		<h2> Connexion</h2>
-		<form methode="post" action="index.php?p=login_V" >
+		<form method="post" action="index.php?p=login_V" >
 
-		<div><span>Adresse Email</span></div><input class="inputText" type="text" name="login" placeholder="Adresse Email"/><br>
+		<div><span>Adresse Email</span></div><input class="inputText" type="text" name="email" placeholder="Adresse Email"/><br>
 	    <div><span>Mot de passe </span></div><input class="inputText" type="password"  name="password" placeholder="Mot de passe"/><br>
 
 	    <button class="formButton" type="submit"/>Connecter </button><br>
@@ -20,7 +20,7 @@
 
 	<div class="forminscription">
 		<h2> Inscription</h2>
-		<form methode="post" action="index.php?p=inscription_V" >
+		<form method="post" action="index.php?p=inscription_V" >
 			<div>
 			<span>Civilité:</span>
 			<INPUT type= "radio" name="gender" value="madame"> Madame

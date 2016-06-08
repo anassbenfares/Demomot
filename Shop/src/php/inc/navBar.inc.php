@@ -5,6 +5,9 @@
 ///Summary : Create the navBar in one file and include in all page
 /// of the web site.
 
+//start session
+session_start();
+
 
 ?>
 <body>
@@ -34,11 +37,27 @@
             <div class="navSquare"><a href="index.php?p=contact">Autres</a></div>
             <!-- /.Link -->
 
-            <!-- Login menu-->
-            <div class="navSquare">    
-                <a href="index.php?p=login"><i class="">Se connecter</i></a> 
-            </div>
-            <!-- /.Login menu -->
+<?php 
+            //Display the name if you're connected in space member
+            if(empty($_SESSION['login']))
+            {
             
+            echo "
+            <!-- Login menu-->
+            <div class=\"navSquare\">    
+                <a href=\"index.php?p=login\"><i>Se connecter</i></a> 
+            </div>
+            <!-- /.Login menu -->";
+            }
+            else
+            {
+            echo"
+            <div class=\"navSquare\">    
+                <a href=\"index.php?p=login_D\"><i>Se déconnecter</i></a> 
+            </div>";
+            }
+   
+
+ ?>             
         </nav>  
         <!-- /.navbar -->
