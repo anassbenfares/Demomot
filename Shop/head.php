@@ -11,6 +11,8 @@
 	<!-- Link CSS-->
     <link href="ressources/styles/structures-css.css" rel="stylesheet">
 
+    <script src="src/js/script.js"></script>
+
 
 </head>
 <?php 
