@@ -9,6 +9,9 @@ $page="index";
  ?>
 <section class="homePageMessage">
 	<img src="./ressources/images/bann.jpg" alt="Smiley face" />
+
+
+	
 	
 </section>
 
