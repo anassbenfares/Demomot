@@ -10,7 +10,7 @@ if(!isset($_GET['p'])){
 else{
 	$p = $_GET['p'];	
 }
-
+echo $p;
 //Check if page exist and if not call page 404
 if(!file_exists("src/php/".$p.".php"))
 {
@@ -21,11 +21,14 @@ if(!file_exists("src/php/".$p.".php"))
 ob_start();
 
 //include the page call in this page
-include "./src/php/".$p.".php";
+$path = "./src/php/".$p.".php";
+echo $path;
+include $path;
 $content = ob_get_contents();
 ob_end_clean();
 
 
 //Include the header of file
 include "head.php";
+include"src/php/inc/classes/DbConnect.inc.php";
  ?>

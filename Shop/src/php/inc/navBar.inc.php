@@ -22,8 +22,8 @@ session_start();
         <!--Navbar Gender-->
         <!--Header-->
         <div class="header">
-            <span class="textLogo">Le Shop</span><br>
-            <span class="textLogo2">by Anass</span>
+            <span class="textLogo"></span><br>
+            <span class="textLogo2"></span>
         </div>    
         <!--Navbar-->
         <nav class="navBar" role="navigation">

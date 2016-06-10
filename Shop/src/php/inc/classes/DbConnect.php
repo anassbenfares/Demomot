@@ -1,14 +1,12 @@
-<?php  
-///Author : Benfares Anass
-///Date : 06.06.2016
-// Summary : Use to connect to db
+<?php
 
-
-
-class DbConnexion
+// Author : benfares anass
+// Date : 08.10.2016
+// Summary : Manage the db
+// -----------------------------------------
+class DbConnect
 {
-
-	// Db infos
+    // Database information
     const USER = "shop";
     const PSW = ".Etml-";
     const DB_NAME = "db_shop";
@@ -31,10 +29,9 @@ class DbConnexion
         // Connect to db MYSQL
         $this->pdo = new PDO($dbh,self::USER, self::PSW);
 
-        //$this->pdo = new PDO('mysql:host=localhost;dbname=db_nickname;charset=utf8', 'dbLoginUser', '.Etml-');
+        //$this->pdo = new PDO('mysql:host=localhost:8889;dbname=db_shop;charset=utf8', 'shop', '.Etml-');
 
-    }//end of function 
-
+    }//end of function dbConnect
 
     // *****************************************************************************************
     // Name: executeGetRequest
@@ -59,6 +56,7 @@ class DbConnexion
 
     }//end of function executeGetRequest
 
+
     // *****************************************************************************************
     // Name: dbUnconnect
     // Summary: Disconnect to database
@@ -75,33 +73,22 @@ class DbConnexion
         //unset(dbConnect->pdo);
     }//end of function dbUnconnect
 
-
-    // *****************************************************************************************
-    // Name: getLogin
-    // Summary: get the password and the id
-    // Param:   -
-    // Return:  $passwordIdArray
-    // *****************************************************************************************
+ 
     public function getLogin()
     {
         //Check the connexion
-        $this->dbConnect();
+        /*$this->dbConnect();
 
         //query
         $querySqlGetLogin = "SELECT * FROM `t_users`";
 
         //do the query on executeGetRequest function
         $passwordIdArray = $this->executeGetRequest($querySqlGetLogin);
-        print_r($passwordIdArray);
 
         //unconnect to Db
         $this->dbUnconnect();
         //return the value
-        return ($passwordIdArray);
+        return ($passwordIdArray);*/
+        echo "coucou";
     }//end of function getLogin
 }
-
-
-
-
-?>

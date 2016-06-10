@@ -10,19 +10,22 @@ session_start();
 //include all classes when it's call
 /*spl_autoload_register(function($class)
 {
-    include 'src/php/inc/classes/'.$class.'.inc.php';
+        include './src/php/inc/classes/'.$class.'.php';
 });*/
+include 'src/php/inc/classes/DbConnect.php';
 
-include_once "./src/php/inc/classes/DbConnect.inc.php";
 
 //recover information for login
 $connexion = new DbConnect();
-$ExecuteRequestLogin = $connexion->getLogin();
 
+$ExecuteRequestLogin = $connexion->getLogin();
+/*
 //password and id
 $password = ($_POST['password']);
 $email = ($_POST['email']);
 
+echo $ExecuteRequestLogin;
+/*
 //if the db isn't empty
 if(count($ExecuteRequestLogin)!=0) {
     //go in the table
@@ -66,5 +69,5 @@ if(count($ExecuteRequestLogin)!=0) {
 else
 {
     die ("Erreur dans la base de données");
-}
+}*/
  ?>

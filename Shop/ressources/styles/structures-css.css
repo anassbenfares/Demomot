@@ -34,11 +34,13 @@ a
 /******************************************** Header ********************************************/
 .header
 {
-	padding: 20px;
+	
 	text-align: center;
 	margin: 0px auto;
 	color: black;
-	height: 80px;
+	height: 100px;
+	background: url(/ressources/images/header/header.png);
+
 }
 
 .textLogo
