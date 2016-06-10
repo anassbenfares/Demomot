@@ -1,5 +1,7 @@
 <?php 
-
+///Author : Benfares Anass
+///Date : 03.06.2016
+///Summary : Display error if there is an error or the link is flase
 
 
  ?>
