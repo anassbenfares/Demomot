@@ -52,9 +52,18 @@ session_start();
             else
             {
             echo"
-            <div class=\"navSquare\">    
+            <div class=\"navSquare\"> Connecter en ".$_SESSION['name']."   
                 <a href=\"index.php?p=login_D\"><i>Se déconnecter</i></a> 
             </div>";
+
+            if($_SESSION['rank']=="1")
+            {
+            echo "
+            <div class=\"navSquare\">   
+                <a href=\"index.php\"><i>Suivi de commande</i></a> 
+            </div>";
+            }
+
             }
    
 
