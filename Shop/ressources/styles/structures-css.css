@@ -38,8 +38,10 @@ a
 	text-align: center;
 	margin: 0px auto;
 	color: black;
-	height: 100px;
+	height: 140px;
 	background: url(/ressources/images/header/header.png);
+	background-repeat: no-repeat;
+	background-position: 0px 30px;
 
 }
 
@@ -59,9 +61,23 @@ a
 {
 	height: 40px;
 	border: 1px solid #888888;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+
 }
 
-.navBar a
+
+.navBar2
+{
+	height: 40px;
+	border: 1px solid #888888;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+
+.navBar2 a
 {
 	color: #888888;
 	font-size: 20px;
@@ -72,7 +88,7 @@ a
 	color: green;
 }
 
-.navBar a:hover
+.navBar2 a:hover
 {
 	color: black;
 }
@@ -114,6 +130,38 @@ a
 {
 	margin-top: 50px;	
 }
+
+.products
+{	
+	height: 260px;
+	float: left;
+	margin-right: 20px;
+	background:#f1f1f1;
+	width: 260px;
+	padding: 10px;
+
+}
+
+.productsImg
+{
+	height: 260px;
+	width: 260px;
+
+}
+
+.productsDescription
+{	
+	height: 20px;
+	text-align: center;
+	padding: 15px;
+}
+
+.clearProducts
+{
+	height: 200px;
+	clear: both;
+}
+
 
 /************************ Form login ************************/
 .formLogin

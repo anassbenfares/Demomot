@@ -104,11 +104,11 @@ class DbConnect
     }//end of function getLogin
 
 
-    // Name: getAllBrand
+    // Name: getAllBrands
     // Summary: get all brands
     // Param: -
     // Return : An array with the brands
-    public function getAllBrand()
+    public function getAllBrands()
     {
         //Initialize ';
         $getRequest='SELECT * FROM `t_brands`';
@@ -117,20 +117,44 @@ class DbConnect
         $brands = $this->executeSQLRequest($getRequest,true);
 
         return $brands;
-    }
+    }//end of function getAllBrands
 
-     // Name: getAllBrand
-    // Summary: get all brands
+    // Name: getAllProductsleByGender
+    // Summary: get all products
     // Param: -
-    // Return : An array with the brands
-    public function getAllArticleByGender()
+    // Return : An array with the products
+    public function getAllProductsByGender()
     {
         //Initialize ';
-        $getRequest='SELECT * FROM `t_brands`';
+        $getRequest='SELECT * FROM `t_products` inner join `t_productspictures` on `idProducts`=`fkProducts`';
 
         //Do the request
-        $brands = $this->executeSQLRequest($getRequest,true);
+        $products = $this->executeSQLRequest($getRequest,true);
 
-        return $brands;
-    }
+        return $products;
+    }//end of function getAllProductsleByGender
+
+
+    // Name: getProductWithId
+    // Summary: get the information about product
+    // Param: $id
+    // Return : An array with the informations of the product
+    public function getProductWithId($id)
+    {
+        //Initialize ';
+        $getRequest='SELECT * FROM `t_products` WHERE `idProducts`='.$id.'';
+
+        //Do the request
+        $product = $this->executeSQLRequest($getRequest,true);
+
+        return $product;
+    }//end of function getProductWithId
+
+
+
+
+
+
+
+    
 }

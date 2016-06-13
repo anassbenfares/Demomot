@@ -7,7 +7,7 @@
  ?>
  		<div class="clearfooter"></div>
 		<footer class="footer">
-			<span>LeShop© created by Anass Benfares</span>
+			<span>LeShop© created by Catinelle</span>
 		</footer>
 	</body>
 </html>

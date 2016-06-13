@@ -15,9 +15,12 @@ session_start();
         <!--Navbar Gender-->
             <nav class="firstNavBar" role="navigation">
                 <!-- Link-->
-                <div class="navSquare"><a class="" href="index.php">Homme</a></div>
-                <div class="navSquare"><a class="" href="index.php">Femme</a></div>
-                <div class="navSquare"><a class="" href="index.php"> </a></div>
+                <div class="navBar"> 
+                    <div class="navSquare"><a class="" href="index.php">Homme</a></div>
+                    <div class="navSquare"><a class="" href="index.php">Femme</a></div>
+                    <div class="navSquare"><a class="" href="index.php">Panier(0)</a></div>
+                </div>
+               
             </nav>    
         <!--Navbar Gender-->
         <!--Header-->
@@ -26,15 +29,16 @@ session_start();
             <span class="textLogo2"></span>
         </div>    
         <!--Navbar-->
-        <nav class="navBar" role="navigation">
+        <nav class="navBar2" role="navigation">
             <!-- Link-->
             <div class="navSquare"><a class="" href="index.php?p=index">Le shop</a></div>
             <div class="navSquare"><a class="active\" href="index.php?p=index">Nouveauté</a></div>
-            <div class="navSquare"><a href="index.php?p=contact">Marque</a></div>
-            <div class="navSquare"><a href="index.php?p=contact">T-Shirt</a></div>
-            <div class="navSquare"><a href="index.php?p=contact">Pantalon</a></div>
-            <div class="navSquare"><a href="index.php?p=contact">Sneakers</a></div>
-            <div class="navSquare"><a href="index.php?p=contact">Autres</a></div>
+            <div class="navSquare"><a href="index.php?p=Brands">Marque</a></div>
+            <div class="navSquare"><a href="index.php?p=Products">T-Shirt</a></div>
+            <div class="navSquare"><a href="index.php?p=Products">Pantalon</a></div>
+            <div class="navSquare"><a href="index.php?p=Products">Sneakers</a></div>
+            <div class="navSquare"><a href="index.php?p=Products">Autres</a></div>
+            <div class="navSquare"><a href="index.php?p=Contact">Contact</a></div>
             <!-- /.Link -->
 
 <?php 
@@ -51,19 +55,17 @@ session_start();
             }
             else
             {
-            echo"
-            <div class=\"navSquare\"> Connecter en ".$_SESSION['name']."   
-                <a href=\"index.php?p=login_D\"><i>Se déconnecter</i></a> 
-            </div>";
-
             if($_SESSION['rank']=="1")
             {
             echo "
             <div class=\"navSquare\">   
                 <a href=\"index.php\"><i>Suivi de commande</i></a> 
             </div>";
-            }
-
+            }          
+            echo"
+            <div class=\"navSquare\">   
+                <a href=\"index.php?p=login_D\"><i>Se déconnecter</i></a> 
+            </div>";
             }
    
 

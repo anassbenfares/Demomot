@@ -4,11 +4,46 @@
 ///Summary : Home page of the web site
 /// with all article  
 
+//start session for var session
+session_start();
+
 $page="index";
 
+//include all classes when it's call
+spl_autoload_register(function($class)
+{
+        include './src/php/inc/classes/'.$class.'.inc.php';
+});
+
+//Create object for use function
+$connexion = new DbConnect();
+//recover informations for login
+$allProducts = $connexion->getAllProductsByGender();
  ?>
 <section class="homePageMessage">
-	<img src="./ressources/images/bann.jpg" alt="Smiley face" />
+	<!--<img src="./ressources/images/bann.png" alt="Smiley face" />-->
+		
+			<?php 
+			foreach ($allProducts as $product => $value) 
+			{	
+				echo 
+				"
+				<a href=\"index.php?p=products&idProduct=".$value['idProducts']."\">
+					<div class=\"products\">
+						<div class= \"productsImg\" style=\"background:url('./ressources/images/data/products/".$value['idProducts']."/".$value['proNamePicture']."')\">
+							<div class=\"clearProducts\"></div>
+							<div class=\"productsDescription\">
+								".$value['fkBrands']." 
+								".$value['proName']." <br>
+								".$value['proPrice'].",00 CHF
+							</div>			
+						</div>
+					</div>
+				</a>
+				";
+			}
 
+			 ?>
+		
 </section>
 
