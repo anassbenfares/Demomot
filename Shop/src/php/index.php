@@ -21,7 +21,7 @@ $connexion = new DbConnect();
 $allProducts = $connexion->getAllProductsByGender();
  ?>
 <section class="homePageMessage">
-	<!--<img src="./ressources/images/bann.png" alt="Smiley face" />-->
+	<img src="./ressources/images/header/bann.png" alt="Smiley face" />
 		
 			<?php 
 			foreach ($allProducts as $product => $value) 

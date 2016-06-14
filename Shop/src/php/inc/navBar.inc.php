@@ -24,10 +24,12 @@ session_start();
             </nav>    
         <!--Navbar Gender-->
         <!--Header-->
+        <a href="index.php?p=index">
         <div class="header">
             <span class="textLogo"></span><br>
             <span class="textLogo2"></span>
         </div>    
+        </a>
         <!--Navbar-->
         <nav class="navBar2" role="navigation">
             <!-- Link-->

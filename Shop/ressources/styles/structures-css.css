@@ -135,18 +135,18 @@ a
 {	
 	height: 260px;
 	float: left;
-	margin-right: 20px;
-	background:#f1f1f1;
-	width: 260px;
-	padding: 10px;
-
+	margin-left: 10px;
+	margin-bottom: 10px;
+	width: 238px;
+	border: 1px solid #e6e6e6;
 }
+
 
 .productsImg
 {
-	height: 260px;
-	width: 260px;
-
+	/*eight: 260px;
+	width: 260px;*/
+					
 }
 
 .productsDescription

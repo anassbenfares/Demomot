@@ -19,12 +19,24 @@ spl_autoload_register(function($class)
 //Create object for use function
 $connexion = new DbConnect();
 
+
 //recover informations for login
 $allProducts = $connexion->getProductWithId($id);
 
-print_r($allProducts);
-
-
-
 
  ?>
+<section class="homePageMessage">
+	<div>
+	<?php  
+		echo "<a href=\"index.php?p=basket&idProduct=$id\">Ajouter au Panier</a><br>";
+		foreach ($allProducts as $value) 
+		{
+			echo 
+			$value['fkBrands']."<br>".
+			$value['proName']."<br>".
+			$value['proDescription']."<br>".
+			$value['proPrice'];
+		}
+	?>
+	</div>
+</section>

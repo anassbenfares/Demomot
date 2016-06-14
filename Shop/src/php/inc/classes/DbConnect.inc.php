@@ -103,11 +103,12 @@ class DbConnect
         return ($passwordIdArray);
     }//end of function getLogin
 
-
+    //*****************************************************************************************
     // Name: getAllBrands
     // Summary: get all brands
     // Param: -
     // Return : An array with the brands
+    //*****************************************************************************************
     public function getAllBrands()
     {
         //Initialize ';
@@ -119,10 +120,12 @@ class DbConnect
         return $brands;
     }//end of function getAllBrands
 
+    //*****************************************************************************************
     // Name: getAllProductsleByGender
     // Summary: get all products
     // Param: -
     // Return : An array with the products
+    //*****************************************************************************************
     public function getAllProductsByGender()
     {
         //Initialize ';
@@ -134,11 +137,12 @@ class DbConnect
         return $products;
     }//end of function getAllProductsleByGender
 
-
+    //*****************************************************************************************
     // Name: getProductWithId
     // Summary: get the information about product
     // Param: $id
     // Return : An array with the informations of the product
+    //*****************************************************************************************
     public function getProductWithId($id)
     {
         //Initialize ';
@@ -149,6 +153,46 @@ class DbConnect
 
         return $product;
     }//end of function getProductWithId
+
+    // Name: addProductOnBasket
+    // Summary: add on db content in basket
+    // Param: $id
+    // Return : -
+    public function addProductOnBasket($id,$idUsers)
+    {
+        //Recover the id of the last insert
+        $getRequestCheckBasket='SELECT `idBaskets` FROM `t_baskets` WHERE `fkUsers`='.$idUsers.' ORDER BY `idBaskets` DESC ';
+
+        //Do the request
+        $checkBasket = $this->executeSQLRequest($getRequestCheckBasket,true);
+
+        //if the basket of the user
+        if(count($checkBasket)==0)
+        {   
+        //Create a basket 
+        $getRequestAddBasket='INSERT INTO `db_Shop`.`t_baskets` (`idBaskets`, `basSend`, `fkUsers`) VALUES (NULL, 0, '.$idUsers.')';
+
+        //execute request
+        $addBasket = $this->executeSQLRequest($getRequestAddBasket,false);
+        }//end if
+
+        //Recover the id of the last insert
+        $getRequestRecoverID='SELECT `idBaskets` FROM `t_baskets` WHERE `fkUsers`='.$idUsers.' ORDER BY `idBaskets` DESC ';
+
+        //Do the request
+        $recoverID = $this->executeSQLRequest($getRequestRecoverID,true);
+        
+        //Create relation
+        $getRequestAddProductOnBasket='INSERT INTO `db_Shop`.`t_basketsproducts` (`idfkProducts`, `idfkBaskets`) VALUES ('.$id.', '.$recoverID[0]['idBaskets'].')';
+
+        //Do the request
+        $addBasketProducts = $this->executeSQLRequest($getRequestAddProductOnBasket,false);
+
+        return $addBasketProducts;
+    }//end of function addProductOnBasket
+
+
+    
 
 
 

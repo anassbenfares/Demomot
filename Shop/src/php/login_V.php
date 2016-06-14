@@ -32,6 +32,7 @@ $email = ($_POST['email']);
             if(($email == $login['useEmail']) and (password_verify($password, $login['usePassword'])))
             {
                     $_SESSION['name'] = $login['useEmail'];
+                    $_SESSION['idUsers'] = $login['idUsers'];
                     $_SESSION['login'] = 1;
                     $_SESSION['rank'] = $login['useRank'];
                     header('location: index.php?p=index');

@@ -13,7 +13,7 @@
 		<div><span>Adresse Email</span></div><input class="inputText" type="text" name="email" placeholder="Adresse Email"/><br>
 	    <div><span>Mot de passe </span></div><input class="inputText" type="password"  name="password" placeholder="Mot de passe"/><br>
 
-	    <button class="formButton" type="submit"/>Connecter </button><br>
+	    <button class="formButton" type="submit"/>se Connecter </button><br>
 
 		</form>
 	</div>
@@ -32,7 +32,7 @@
 			<div id="forminscriptionLogin"> <span>Téléphone</span></div><input class="inputText" type="text" name="login" placeholder="Téléphone"/>
 			<div id="forminscriptionPassword"><span>Choissisez un mot de passe</span></div><input class="inputText"  type="password" name="login" placeholder="Mot de passe"/>
 			<div id="forminscriptionPasswordRepeat"><span>Confirmer le mot de passe</span></div><input class="inputText"  type="passwordRepeat" name="login" placeholder="Répéter le mot de passe"/>
-		    <div id=""><button class="formButton" type="submit"/> s'inscrire</button></div>
+		    <div id=""><button class="formButton" type="submit"/> S'inscrire</button></div>
 
 		</form>
 	</div>
