@@ -3,10 +3,10 @@
 <head>
 
 	<meta charset="utf-8">
-    <meta name="description" content="Welcome to the web site of Karmah">
+    <meta name="description" content="Welcome to the web site of Klothing">
     <meta name="author" content="Benfare Anass">
 
-	<title>Karmah - Shop</title>
+	<title>Le - Shop</title>
 
 	<!-- Link CSS-->
     <link href="ressources/styles/structures-css.css" rel="stylesheet">

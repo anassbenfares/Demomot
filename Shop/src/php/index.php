@@ -35,7 +35,7 @@ $allProducts = $connexion->getAllProductsByGender();
 							<div class=\"productsDescription\">
 								".$value['fkBrands']." 
 								".$value['proName']." <br>
-								".$value['proPrice'].",00 CHF
+								".$value['priValue'].",00 ".$value['idCurrency']."
 							</div>			
 						</div>
 					</div>

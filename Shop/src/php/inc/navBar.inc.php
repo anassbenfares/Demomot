@@ -8,7 +8,20 @@
 //start session
 session_start();
 
+//include all classes when it's call
+spl_autoload_register(function($class)
+{
+        include './src/php/inc/classes/'.$class.'.inc.php';
+});
 
+//Create object for use function
+$connexion = new DbConnect();
+
+
+$idUsers = $_SESSION['idUsers'];
+
+//recover informations for login
+$basketNumber = $connexion->countArticleOnBasket($idUsers);
 ?>
 <body>
     <div class="container">
@@ -18,7 +31,7 @@ session_start();
                 <div class="navBar"> 
                     <div class="navSquare"><a class="" href="index.php">Homme</a></div>
                     <div class="navSquare"><a class="" href="index.php">Femme</a></div>
-                    <div class="navSquare"><a class="" href="index.php">Panier(0)</a></div>
+                    <div class="navSquare"><a class="" href="index.php?p=basket">Panier(<?php echo $basketNumber; ?>)</a></div>
                 </div>
                
             </nav>    
@@ -37,7 +50,6 @@ session_start();
             <div class="navSquare"><a class="active\" href="index.php?p=index">Nouveauté</a></div>
             <div class="navSquare"><a href="index.php?p=Brands">Marque</a></div>
             <div class="navSquare"><a href="index.php?p=Products">T-Shirt</a></div>
-            <div class="navSquare"><a href="index.php?p=Products">Pantalon</a></div>
             <div class="navSquare"><a href="index.php?p=Products">Sneakers</a></div>
             <div class="navSquare"><a href="index.php?p=Products">Autres</a></div>
             <div class="navSquare"><a href="index.php?p=Contact">Contact</a></div>
@@ -61,7 +73,7 @@ session_start();
             {
             echo "
             <div class=\"navSquare\">   
-                <a href=\"index.php\"><i>Suivi de commande</i></a> 
+                <a href=\"index.php?p=commandStatus\"><i>Suivi de commande</i></a> 
             </div>";
             }          
             echo"

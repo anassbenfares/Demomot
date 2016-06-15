@@ -101,7 +101,7 @@ class DbConnect
 
         //return the value
         return ($passwordIdArray);
-    }//end of function getLogin
+    }//end of function getLogin()
 
     //*****************************************************************************************
     // Name: getAllBrands
@@ -118,7 +118,7 @@ class DbConnect
         $brands = $this->executeSQLRequest($getRequest,true);
 
         return $brands;
-    }//end of function getAllBrands
+    }//end of function getAllBrands()
 
     //*****************************************************************************************
     // Name: getAllProductsleByGender
@@ -129,13 +129,13 @@ class DbConnect
     public function getAllProductsByGender()
     {
         //Initialize ';
-        $getRequest='SELECT * FROM `t_products` inner join `t_productspictures` on `idProducts`=`fkProducts`';
+        $getRequest='SELECT * FROM `t_products` inner join `t_productspictures` on `idProducts`=`fkProducts`  INNER JOIN `t_prices` ON `fkPrices`= `idPrices`INNER JOIN `t_currency` ON `idCurrency`= `fkCurrency` ORDER BY `t_products`.`idProducts` DESC';
 
         //Do the request
         $products = $this->executeSQLRequest($getRequest,true);
 
         return $products;
-    }//end of function getAllProductsleByGender
+    }//end of function getAllProductsleByGender()
 
     //*****************************************************************************************
     // Name: getProductWithId
@@ -146,27 +146,46 @@ class DbConnect
     public function getProductWithId($id)
     {
         //Initialize ';
-        $getRequest='SELECT * FROM `t_products` WHERE `idProducts`='.$id.'';
+        $getRequest='SELECT * FROM `t_products`  INNER JOIN `t_prices` ON `fkPrices`= `idPrices`INNER JOIN `t_currency` ON `idCurrency`= `fkCurrency` WHERE `idProducts`='.$id.'';
+
+        //Do the request
+        $product = $this->executeSQLRequest($getRequest,true);
+        return $product;
+    }//end of function getProductWithId()
+
+
+    //*****************************************************************************************
+    // Name: getProductSizes
+    // Summary: get the sizes about product
+    // Param: $id
+    // Return : An array with the sizes of the product
+    //*****************************************************************************************
+    public function getProductSizes($id)
+    {
+        //Initialize ';
+        $getRequest='SELECT * FROM `t_stock` WHERE `idfkProducts`='.$id.'';
 
         //Do the request
         $product = $this->executeSQLRequest($getRequest,true);
 
         return $product;
-    }//end of function getProductWithId
+    }//end of function getProductSizes
 
+    //*****************************************************************************************
     // Name: addProductOnBasket
     // Summary: add on db content in basket
     // Param: $id
     // Return : -
-    public function addProductOnBasket($id,$idUsers)
+    //*****************************************************************************************
+    public function addProductOnBasket($idProducts,$idUsers,$idSize)
     {
         //Recover the id of the last insert
-        $getRequestCheckBasket='SELECT `idBaskets` FROM `t_baskets` WHERE `fkUsers`='.$idUsers.' ORDER BY `idBaskets` DESC ';
+        $getRequestCheckBasket='SELECT `idBaskets` FROM `t_baskets` WHERE `fkUsers`='.$idUsers.' ORDER BY `idBaskets` DESC';
 
         //Do the request
         $checkBasket = $this->executeSQLRequest($getRequestCheckBasket,true);
 
-        //if the basket of the user
+        //if the basket of the user doesn't exist
         if(count($checkBasket)==0)
         {   
         //Create a basket 
@@ -174,7 +193,7 @@ class DbConnect
 
         //execute request
         $addBasket = $this->executeSQLRequest($getRequestAddBasket,false);
-        }//end if
+        }//end create basket
 
         //Recover the id of the last insert
         $getRequestRecoverID='SELECT `idBaskets` FROM `t_baskets` WHERE `fkUsers`='.$idUsers.' ORDER BY `idBaskets` DESC ';
@@ -182,22 +201,72 @@ class DbConnect
         //Do the request
         $recoverID = $this->executeSQLRequest($getRequestRecoverID,true);
         
-        //Create relation
-        $getRequestAddProductOnBasket='INSERT INTO `db_Shop`.`t_basketsproducts` (`idfkProducts`, `idfkBaskets`) VALUES ('.$id.', '.$recoverID[0]['idBaskets'].')';
-
+        //Create entry in db
+        $getRequestAddProductOnBasket='INSERT INTO `db_Shop`.`t_basketsproducts` (`idfkProducts`, `idfkBaskets`,`fkSizes`) VALUES ('.$idProducts.', '.$recoverID[0]['idBaskets'].', "'.$idSize.'")';
+        
         //Do the request
         $addBasketProducts = $this->executeSQLRequest($getRequestAddProductOnBasket,false);
-
+        
         return $addBasketProducts;
-    }//end of function addProductOnBasket
+    }//end of function addProductOnBasket()
 
+    //*****************************************************************************************
+    // Name: countArticleOnBasket
+    // Summary: Count the number of article on db
+    // Param: $idUsers
+    // Return : int with value
+    //*****************************************************************************************
+    public function countArticleOnBasket($idUsers)
+    {
 
+     //Recover the id of the last insert
+    $getRequestCountBasket='SELECT `idfkProducts` FROM `t_basketsproducts` INNER JOIN `t_baskets` ON `idBaskets`=`idfkBaskets` WHERE `fkUsers` ='.$idUsers.'';
+
+    //Do the request
+    $countBasket = $this->executeSQLRequest($getRequestCountBasket,true);    
+
+    //count the number of articles
+    $intCountBasket = count($countBasket);
+
+    return $intCountBasket;
+    }//end of function countArticleOnBasket()
+
+    //*****************************************************************************************
+    // Name: showBasket
+    // Summary: Return article in the basker
+    // Param: $idUsers
+    // Return : array with all article with quantity
+    //*****************************************************************************************
+    public function showBasket($idUsers)
+    {
+
+     //Recover all content of the basket
+    //$getBasket='SELECT count(`idProducts`) as number,`idProducts`,`proName`,`proPrice`,`fkSizes`,`fkBrands` FROM `t_products` INNER JOIN `t_basketsproducts` ON `idProducts`=`idfkProducts`INNER JOIN `t_baskets` ON `idBaskets`=`idfkBaskets` WHERE `fkUsers` ="'.$idUsers.'" GROUP BY `fkSizes`, `idProducts`';
+
+    //Recover all content of the basket
+    $getBasket='SELECT count(`idProducts`) as number,`idProducts`,`proName`,`fkSizes`,`fkBrands`,`priValue`,`idCurrency` ,sum(`priValue`) as Prix FROM `t_products` INNER JOIN `t_basketsproducts` ON `idProducts`=`idfkProducts`INNER JOIN `t_baskets` ON `idBaskets`=`idfkBaskets`INNER JOIN `t_prices` ON `fkPrices`= `idPrices`INNER JOIN `t_currency` ON `idCurrency`= `fkCurrency` WHERE `fkUsers` ="'.$idUsers.'" GROUP BY `fkSizes`, `idProducts`';
+
+    //Do the request
+    $Basket = $this->executeSQLRequest($getBasket,true);    
+
+    return $Basket;
+    }//end of function showBasket()
+
+    //*****************************************************************************************
+    // Name: basketTotalPrice
+    // Summary: Return the price sum of all article in basket
+    // Param: $idUsers
+    // Return : float with price
+    //*****************************************************************************************
+    public function basketTotalPrice($idUsers)
+    {
+        //$getPrice='SELECT SUM(`priValue`) AS "price" FROM `t_products` INNER JOIN `t_prices` ON `fkPrices`= `idPrices`INNER JOIN `t_currency` ON `idCurrency`= `fkCurrency` INNER JOIN `t_basketsproducts` ON `idProducts`=`idfkProducts` INNER JOIN `t_baskets` ON `idBaskets`=`idfkBaskets` WHERE `fkUsers` ="'.$idUsers.'"';
+        
+        $Price = $this->executeSQLRequest($getPrice,true);  
+
+        return $Price;
+    }//end of function basketTotalPrice()
     
-
-
-
-
-
 
 
     
