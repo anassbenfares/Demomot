@@ -47,11 +47,11 @@ $basketNumber = $connexion->countArticleOnBasket($idUsers);
         <nav class="navBar2" role="navigation">
             <!-- Link-->
             <div class="navSquare"><a class="" href="index.php?p=index">Le shop</a></div>
-            <div class="navSquare"><a class="active\" href="index.php?p=index">Nouveauté</a></div>
-            <div class="navSquare"><a href="index.php?p=Brands">Marque</a></div>
-            <div class="navSquare"><a href="index.php?p=Products">T-Shirt</a></div>
-            <div class="navSquare"><a href="index.php?p=Products">Sneakers</a></div>
-            <div class="navSquare"><a href="index.php?p=Products">Autres</a></div>
+            <div class="navSquare"><a class="active\" href="index.php?p=product&Category=new">Nouveauté</a></div>
+            <div class="navSquare"><a href="index.php?p=brands">Marque</a></div>
+            <div class="navSquare"><a href="index.php?p=product&Category=t-shirt">T-Shirt</a></div>
+            <div class="navSquare"><a href="index.php?p=product&Category=sneakers">Sneakers</a></div>
+            <div class="navSquare"><a href="index.php?p=product&Category=accesories">Autres</a></div>
             <div class="navSquare"><a href="index.php?p=Contact">Contact</a></div>
             <!-- /.Link -->
 

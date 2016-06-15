@@ -23,12 +23,6 @@ $allBrands = $connexion->getAllBrands($id);
 
 print_r($allBrands);
 
-
-
-
- ?>
-
-
  ?>
 
 
